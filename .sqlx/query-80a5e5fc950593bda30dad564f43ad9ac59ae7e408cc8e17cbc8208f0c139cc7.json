@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "UPDATE users SET code_attempts = 0, code_created_at = ?, code_hash = ? WHERE id = ?",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 3
+    },
+    "nullable": []
+  },
+  "hash": "80a5e5fc950593bda30dad564f43ad9ac59ae7e408cc8e17cbc8208f0c139cc7"
+}

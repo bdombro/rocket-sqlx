@@ -1,0 +1,22 @@
+CREATE TABLE posts (
+  id TEXT PRIMARY KEY NOT NULL,
+  content TEXT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  user_id INTEGER NOT NULL,
+  variant TEXT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  code_attempts INTEGER DEFAULT 0,
+  code_created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  code_hash TEXT,
+  email TEXT UNIQUE NOT NULL
+);
+
+CREATE INDEX idx_posts_updated_at ON posts (updated_at);
+CREATE INDEX idx_posts_user_id ON posts (user_id);
+CREATE INDEX idx_users_email ON users (email);

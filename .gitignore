@@ -1,0 +1,7 @@
+target
+*.sqlite
+*.sqlite-*
+.env
+memory
+*.bak
+sqlx.sqlite3

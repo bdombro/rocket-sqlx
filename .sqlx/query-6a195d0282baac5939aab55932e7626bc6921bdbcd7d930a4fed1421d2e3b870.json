@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "UPDATE posts SET content = ?, updated_at = ? WHERE id = ? AND user_id = ? AND updated_at < ?",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 5
+    },
+    "nullable": []
+  },
+  "hash": "6a195d0282baac5939aab55932e7626bc6921bdbcd7d930a4fed1421d2e3b870"
+}
